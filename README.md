@@ -1,4 +1,4 @@
 # template for CIT 3606
-Use this template to make your repo holding all the labs for this class
+## BRIAN VO
 
-Change this readme text to your name and class
+this is my repo :)
