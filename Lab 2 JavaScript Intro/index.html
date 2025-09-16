@@ -6,8 +6,20 @@
         <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <script>
+            var today = new Date();
+            if (today.getHours() < 12)
+                document.write("Good morning!");
+            else if (today.getHours() < 18)
+                document.write("Good afternoon!");
+            else
+                document.write("Good evening!");
+        </script>
       
-      
+        <script>
+            var dollar = prompt("Enter a dollar amount.")
+            document.write("That would be " + (dollar * 5.32) + " real.")
+        </script>
 
         
     </body>
