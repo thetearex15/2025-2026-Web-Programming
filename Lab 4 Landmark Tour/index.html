@@ -6,8 +6,15 @@
         <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-      
-      
+        <img src="E:\2025-2026-Web-Programming\Lab 4 Landmark Tour\Pictures\Colosseum-Rome-Italy.png" id="changing_landmark" alt="Roman Colosseum" width="600">
+        <form>
+            <input type="radio" id="colosseum_choice" name="landmark_pictures" value="The Roman Colosseum" onclick="changePicture('The Roman Colosseum')">
+            <label for="colosseum_choice">The Roman Colosseum</label><br>
+            <input type="radio" id="sphinx_choice" name="landmark_pictures" value="The Great Sphinx of Giza" onclick="changePicture('The Great Sphinx of Giza')">
+            <label for="sphinx_choice">The Great Sphinx of Giza</label><br>
+            <input type="radio" id="moai_choice" name="landmark_pictures" value="Moai" onclick="changePicture('Moai')">
+            <label for="moai_choice">Moai</label><br>
+        </form>
      <!-- The JavaScript code is attached at the bottom of the page
            after the page is completely loaded. Write your code in script.js. -->
      <script src="script.js"></script> 
