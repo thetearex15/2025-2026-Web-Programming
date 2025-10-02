@@ -1,11 +1,19 @@
 body {
-    
+    background-color:#636B2F;
 }
 
 #description {
-	background-color: lightblue;
+	background-color: #D4DE95;
 	width: 600px;
     margin-top: 5px;
 	margin-left: 5px;
     text-align: center;
     }
+#landmark_form {
+    background-color: #D4DE95;
+    width: 200px;
+}
+#size {
+    background-color: #D4DE95;
+}
+
