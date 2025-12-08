@@ -5,10 +5,12 @@
         <title>CIT 3606 Final Project</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
-    <h1>Cryptogram</h1>
+    <h1>Hangman</h1>
     <body>
-        <button onClick="giveQuote()">New Game</button>
-        <div id="quoteDisplay">Start a new game!</div>
+        <img src=".\images\hangman1.png" alt="Hangman Image" width="200" height="200" id="hangman" class="centeredObjects"/>
+        <div></div>
+        <button onClick="resetGame()" class="centeredObjects">New Game</button>
+        <div id="wordDisplay">Press the button to play!</div>
         <div id="textBoxes"></div>
         <script src="script.js"></script>
     </body>
