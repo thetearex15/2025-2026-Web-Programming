@@ -1,6 +1,9 @@
-
-
 body {
     align-items: center;
     text-align: center;
+    background-color: blanchedalmond;
+}
+
+h2 {
+    font-size: 48px;
 }

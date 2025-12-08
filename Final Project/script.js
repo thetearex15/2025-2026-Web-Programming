@@ -97,22 +97,34 @@ function startGame() {
 }
 
 function checkLetter(currWord) {
+    if (incorrectGuesses === 8) {
+        window.location.reload();
+    }
     let letterGuess = document.getElementById("letterInput").value;
     for (let i = 0; i < currWord.length; i++) {
         if (letterGuess === currWord.charAt(i)) {
             console.log("Correct guess!");
             blanks = fillInLetters(letterGuess, currWord, blanks);
+            document.getElementById("letterInput").value = "";
             return;
         }
     }
     alert("Incorrect letter!");
+    addToLetterBank(letterGuess);
     progressImage();
+}
+
+function addToLetterBank(letterGuess) {
+    var letterBank = document.getElementById("letterBank");
+    letterBank.style.fontSize = "64px";
+    letterBank.textContent += letterGuess + " ";
 }
 
 function fillInLetters(letterGuess, currWord) {
     var wordDisplay = document.getElementById("wordDisplay");
     for (let i = 0; i < currWord.length; i++) {
         if (letterGuess === currWord.charAt(i)) {
+            //this i had to steal from the internet because strings are immutable in js
             let newBlanks = blanks.substring(0, i*2) + letterGuess + blanks.substring(i*2 + 1);
             blanks = newBlanks;
         }
@@ -122,9 +134,17 @@ function fillInLetters(letterGuess, currWord) {
 }
 
 function checkWord(currWord) {
+    if (incorrectGuesses === 8) {
+        window.location.reload();
+    }
     let wordGuess = document.getElementById("wordInput").value.toLowerCase();
     if (wordGuess === currWord.toLowerCase()) {
         alert("You win! The word was: " + currWord);
+        //fill in the blanks
+        for (let i = 0; i < currWord.length; i++) {
+            blanks = fillInLetters(currWord.charAt(i), currWord, blanks);
+        }
+        document.getElementById("wordInput").value = "";
     }
     else {
         alert("Incorrect word!");
@@ -133,6 +153,8 @@ function checkWord(currWord) {
 }
 
 function progressImage() {
+    document.getElementById("letterInput").value = "";
+    document.getElementById("wordInput").value = "";
     var image = document.getElementById("hangman");
     imageSrcBeginning = ".\\images\\hangman";
     incorrectGuesses += 1;
